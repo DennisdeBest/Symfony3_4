@@ -12,3 +12,6 @@ services:
 
     RC\UserBundle\:
         resource: '../../src/RC/UserBundle/*'
+
+    RC\CustomerBundle\:
+        resource: '../../src/RC/CustomerBundle/*'

@@ -1,0 +1,11 @@
+{% import '@RCWeb/Macro/breadcrumb.html.twig' as breadcrumb %}
+
+{% set breadcrumbs = [
+        { label: 'sylius.ui.administration'|trans, url: path('rc_homepage') },
+        { label: (metadata.applicationName~'.ui.'~metadata.pluralName)|trans, url: path(configuration.getRouteName('index'), configuration.vars.route.parameters|default({})) },
+        { label: resource.code|default(resource)},
+        { label: 'sylius.ui.edit'|trans }
+    ]
+%}
+
+{{ breadcrumb.crumble(breadcrumbs) }}

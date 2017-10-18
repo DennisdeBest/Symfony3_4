@@ -1,0 +1,15 @@
+RC\CustomerBundle\Entity\Customer:
+    type: entity
+    table: customer
+    fields:
+        firstname:
+            type: string
+            length: 25
+        lastname:
+            type: string
+            length: 25
+
+    embedded:
+        address:
+            class: RC\CoreBundle\Entity\Address
+            columnPrefix: false

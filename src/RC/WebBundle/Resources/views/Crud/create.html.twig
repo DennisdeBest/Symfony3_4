@@ -1,0 +1,31 @@
+{% extends 'RCWebBundle::layout.html.twig' %}
+{% set header = configuration.vars.header|default(metadata.applicationName~'.ui.new_'~metadata.name) %}
+{% set event_prefix = metadata.applicationName ~ '.admin.' ~ metadata.name ~ '.create' %}
+
+{% block title %}{{ header|trans }} {{ parent() }}{% endblock %}
+
+{% form_theme form '@SyliusUi/Form/theme.html.twig' %}
+
+{% block mainContent %}
+{{ sonata_block_render_event(event_prefix ~ '.before_header', {'resource': resource}) }}
+
+{% include '@RCWeb/Crud/Create/_header.html.twig' %}
+
+{{ sonata_block_render_event(event_prefix ~ '.after_header', {'resource': resource}) }}
+
+{% include '@RCWeb/Crud/Create/_content.html.twig' %}
+
+{{ sonata_block_render_event(event_prefix ~ '.after_content', {'resource': resource}) }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {{ sonata_block_render_event(event_prefix ~ '.stylesheets') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ sonata_block_render_event(event_prefix ~ '.javascripts') }}
+{% endblock %}

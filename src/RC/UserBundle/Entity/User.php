@@ -7,9 +7,12 @@ use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="red_carpet_user")
+ * @ORM\Table(name="user")
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="type", type="string")
+ * @ORM\DiscriminatorMap({
+ *    "customer" = "RC\CustomerBundle\Entity\Customer"
+ *     })
  */
 abstract class User extends BaseUser
 {

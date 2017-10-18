@@ -1,0 +1,6 @@
+rc_homepage:
+    path:     /
+    defaults: { _controller: RCWebBundle:Default:index }
+
+rc_frontend:
+    resource: "@RCWebBundle/Resources/config/routing/app/main.yml"

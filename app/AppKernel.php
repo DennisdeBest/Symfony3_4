@@ -14,9 +14,46 @@ class AppKernel extends Kernel
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+
+            //FOS Bundles
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+
+            //JMS Bundles
+            new JMS\AopBundle\JMSAopBundle(),
+            new JMS\DiExtraBundle\JMSDiExtraBundle($this),
+            new JMS\SerializerBundle\JMSSerializerBundle($this),
+            new JMS\TranslationBundle\JMSTranslationBundle(),
+
+            //Sylius Bundles
+            new Sylius\Bundle\ResourceBundle\SyliusResourceBundle(),
+            new Sylius\Bundle\FixturesBundle\SyliusFixturesBundle(),
+            new Sylius\Bundle\GridBundle\SyliusGridBundle(),
+            new Sylius\Bundle\UiBundle\SyliusUiBundle(),
+            new winzou\Bundle\StateMachineBundle\winzouStateMachineBundle(),
+
+            //Google Map bundles
+            new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
+            new Ivory\SerializerBundle\IvorySerializerBundle(),
+            new Http\HttplugBundle\HttplugBundle(),
+
+            new DavidBadura\FakerBundle\DavidBaduraFakerBundle(),
+
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+
+            new Sonata\BlockBundle\SonataBlockBundle(),
+
+            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+
+            //User Bundles
             new RC\WebBundle\RCWebBundle(),
             new RC\UserBundle\RCUserBundle(),
+            new RC\CustomerBundle\RCCustomerBundle(),
+            new RC\CoreBundle\RCCoreBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

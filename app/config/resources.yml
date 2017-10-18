@@ -1,0 +1,6 @@
+sylius_resource:
+    resources:
+        rc.customer:
+            classes:
+                model: RC\CustomerBundle\Entity\Customer
+                form: RC\Bundle\CustomerBundle\Form\Type\RegistrationType

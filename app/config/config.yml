@@ -2,6 +2,8 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: resources.yml }
+    - { resource: grids/grids.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -67,3 +69,38 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: RedCarpet\Bundle\UserBundle\Entity\User
+    from_email:
+        address: '%mailer.from_address%'
+        sender_name: '%mailer.from_name%'
+
+david_badura_faker:
+    locale: fr_FR
+
+sylius_fixtures:
+    suites:
+        default:
+            listeners:
+                purge_user_tables: ~
+            fixtures:
+                customer:
+                    priority: 100
+                contact:
+                    priority: 90
+
+
+sonata_block:
+    default_contexts: [sonata_page_bundle]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+
+        #sonata.admin_doctrine_orm.block.audit:
+        #    contexts:   [admin]
+
+        sonata.block.service.text:
+        sonata.block.service.rss:

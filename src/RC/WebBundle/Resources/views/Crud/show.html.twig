@@ -1,0 +1,35 @@
+{% extends 'RCWebBundle::layout.html.twig' %}
+{% dump %}
+
+{% set definition = resource.definition %}
+{% set data = resource.data %}
+{% set event_prefix = metadata.applicationName ~ '.admin.' ~ metadata.name ~ '.show' %}
+
+{% set header = configuration.vars.header|default(metadata.applicationName~'.ui.'~metadata.pluralName) %}
+
+{% block title %}{{ header|trans }} {{ parent() }}{% endblock %}
+
+{% block mainContent %}
+{{ sonata_block_render_event(event_prefix ~ '.before_header', {'resources': resources}) }}
+
+{% include '@RCWeb/Crud/Show/_header.html.twig' %}
+
+{{ sonata_block_render_event(event_prefix ~ '.after_header', {'resources': resources}) }}
+
+{% include '@RCWeb/Crud/Show/_content.html.twig' %}
+
+{{ sonata_block_render_event(event_prefix ~ '.after_content', {'resources': resources}) }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {{ sonata_block_render_event(event_prefix ~ '.stylesheets') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ sonata_block_render_event(event_prefix ~ '.javascripts') }}
+{% endblock %}
+

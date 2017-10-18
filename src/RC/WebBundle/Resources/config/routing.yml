@@ -1,3 +1,0 @@
-rc_web_homepage:
-    path:     /
-    defaults: { _controller: RCWebBundle:Default:index }

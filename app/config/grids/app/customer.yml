@@ -1,0 +1,28 @@
+sylius_grid:
+    grids:
+        rc_customer:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: RC\CustomerBundle\Entity\Customer
+            fields:
+                firstname:
+                    type: string
+                    label: red_carpet.grid.customer.firstname
+                lastname:
+                    type: string
+                    label: red_carpet.grid.customer.lastname
+                enabled:
+                    type: twig
+                    label: sylius.ui.enabled
+                    options:
+                        template: SyliusUiBundle:Grid/Field:enabled.html.twig
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete
