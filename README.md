@@ -1,4 +1,11 @@
 project
 =======
 
-A Symfony project created on October 17, 2017, 12:21 pm.
+Base Symfony 3.4 project.
+
+This project uses webpack encore for asset management.
+
+use _yarn run encore dev --watch_ command to watch for file changes and compile assets.
+assets are in the assets directory at the root of the project.
+
+
