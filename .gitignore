@@ -42,7 +42,8 @@
 
 # Vendor bundles
 vendor/
-
+node_modules/
 ### Symfony Patch ###
 /web/css/
 /web/js/
+

@@ -1,0 +1,18 @@
+<html>
+<header>
+    {% block stylesheets %}
+    <link href="{{ asset('build/global.css') }}" rel="stylesheet">
+    {% endblock %}
+</header>
+<body>
+<div id="container">
+    {% block content %}
+    {% endblock %}
+</div>
+
+{% block scripts %}
+<script src="{{ asset('build/app.js') }}"></script>
+{% endblock %}
+</body>
+
+</html>

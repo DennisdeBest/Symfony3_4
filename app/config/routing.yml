@@ -1,0 +1,4 @@
+rc_web:
+    resource: "@RCWebBundle/Resources/config/routing.yml"
+    prefix:   /
+
