@@ -3,6 +3,8 @@
 {% set breadcrumbs = [
         { label: 'sylius.ui.administration'|trans, url: path('rc_homepage') },
         { label: (metadata.applicationName~'.ui.'~metadata.pluralName)|trans },
+        { label: resource.code|default(resource)},
+        { label: 'sylius.ui.show'|trans }
     ]
 %}
 

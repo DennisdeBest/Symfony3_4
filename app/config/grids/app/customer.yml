@@ -24,5 +24,20 @@ sylius_grid:
                 item:
                     update:
                         type: update
+                        options:
+                            link:
+                                parameters:
+                                    uuid: resource.uuid
                     delete:
                         type: delete
+                        options:
+                            link:
+                                parameters:
+                                    uuid: resource.uuid
+                    show:
+                        type: show
+                        options:
+                            link:
+                                parameters:
+                                    uuid: resource.uuid
+

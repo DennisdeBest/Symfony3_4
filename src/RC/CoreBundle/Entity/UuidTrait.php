@@ -2,6 +2,8 @@
 
 namespace RC\CoreBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 trait UuidTrait
 {
     /**

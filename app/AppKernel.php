@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 
             //FOS Bundles
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
@@ -50,6 +51,7 @@ class AppKernel extends Kernel
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
 
             //User Bundles
+            new PUGX\MultiUserBundle\PUGXMultiUserBundle(),
             new RC\WebBundle\RCWebBundle(),
             new RC\UserBundle\RCUserBundle(),
             new RC\CustomerBundle\RCCustomerBundle(),

@@ -1,6 +1,7 @@
 rc_customer:
     resource: |
         alias: rc.customer
+        identifier: uuid
         section: app
         templates: RCWebBundle:Crud
         except: []

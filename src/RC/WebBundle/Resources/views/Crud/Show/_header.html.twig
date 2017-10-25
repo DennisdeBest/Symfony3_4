@@ -3,7 +3,7 @@
         {% include configuration.vars.templates.header_title|default('@RCWeb/Crud/Index/_headerTitle.html.twig') %}
         {% include configuration.vars.templates.breadcrumb|default('@RCWeb/Crud/Index/_breadcrumb.html.twig') %}
 
-        {{ sonata_block_render_event(event_prefix ~ '.header', {'resources': resources}) }}
+        {{ sonata_block_render_event(event_prefix ~ '.header', {'resource': resource}) }}
     </div>
 
     {% include '@RCWeb/Crud/Index/_actions.html.twig' %}

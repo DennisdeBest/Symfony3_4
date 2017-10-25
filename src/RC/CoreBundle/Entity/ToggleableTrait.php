@@ -2,14 +2,16 @@
 
 namespace RC\CoreBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 trait ToggleableTrait
 {
     /**
      * @var bool
      *
-     * @ORM\Column(name="enabled", type="boolean")
+     * @ORM\Column(name="isEnabled", type="boolean")
      */
-    protected $enabled = true;
+    protected $isEnabled = true;
 
     /**
      * {@inheritDoc}
@@ -18,7 +20,7 @@ trait ToggleableTrait
      */
     public function isEnabled()
     {
-        return $this->enabled;
+        return $this->isEnabled;
     }
 
     /**
@@ -28,9 +30,9 @@ trait ToggleableTrait
      *
      * @return static
      */
-    public function setEnabled($enabled)
+    public function setEnabled($isEnabled)
     {
-        $this->enabled = (bool) $enabled;
+        $this->isEnabled = (bool) $isEnabled;
 
         return $this;
     }
@@ -42,16 +44,16 @@ trait ToggleableTrait
      */
     public function getEnabled()
     {
-        return $this->enabled;
+        return $this->isEnabled;
     }
 
     public function enable()
     {
-        $this->enabled = true;
+        $this->isEnabled = true;
     }
 
     public function disable()
     {
-        $this->enabled = false;
+        $this->isEnabled = false;
     }
 }

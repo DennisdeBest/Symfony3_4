@@ -10,6 +10,13 @@ services:
         autoconfigure: true
         public: false
 
+    RC\CoreBundle\:
+        resource: '../../src/RC/CoreBundle/*'
+
+    RC\CoreBundle\EventListener\UuidListener:
+        tags:
+          - { name: doctrine.event_listener, event: prePersist }
+
     RC\UserBundle\:
         resource: '../../src/RC/UserBundle/*'
 

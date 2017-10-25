@@ -13,7 +13,7 @@
 
 {{ sonata_block_render_event(event_prefix ~ '.after_header', {'resource': resource}) }}
 
-{% include '@RCWeb/Crud/Show/_content.html.twig' %}
+{{ resource.firstname }}
 
 {{ sonata_block_render_event(event_prefix ~ '.after_content', {'resource': resource}) }}
 {% endblock %}
