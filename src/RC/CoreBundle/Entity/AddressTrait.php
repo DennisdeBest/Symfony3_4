@@ -4,158 +4,63 @@
 namespace RC\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 trait AddressTrait
 {
     /**
      * @var string
      *
-     * @ORM\Column(name="street", type="string", length=255, nullable=true)
+     * @ORM\Column(name="address", type="string", length=255, nullable=true)
      */
-    protected $street;
+    protected $address;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="city", type="string", length=255, nullable=true)
-     */
-    protected $city;
-
-    /**
-     * @var string
+     * @ORM\Column(name="place_id", type="string", length=255, nullable=true)
      *
-     * @ORM\Column(name="postcode", type="string", length=255, nullable=true)
+     * @Assert\Expression(
+     *     "not(this.getAddress() == null) and this.getPlaceId() == null",
+     *     message="Address not valid"
+     * )
      */
-    protected $postcode;
+    protected $place_id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="country", type="string", length=255, nullable=true)
-     */
-    protected $country;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="latitude", type="string", length=255, nullable=true)
-     */
-    protected $latitude;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="longitude", type="string", length=255, nullable=true)
-     */
-    protected $longitude;
 
     /**
      * @return string
      */
-    public function getStreet(): string
+    public function getAddress()
     {
-        return $this->street;
+        return $this->address;
     }
 
     /**
-     * @param string $street
+     * @param string $address
      * @return AddressTrait
      */
-    public function setStreet(string $street): AddressTrait
+    public function setAddress(string $address)
     {
-        $this->street = $street;
+        $this->address = $address;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getCity(): string
+    public function getPlaceId()
     {
-        return $this->city;
+        return $this->place_id;
     }
 
     /**
-     * @param string $city
-     * @return AddressTrait
+     * @param string $place_id
      */
-    public function setCity(string $city): AddressTrait
+    public function setPlaceId(string $place_id)
     {
-        $this->city = $city;
-        return $this;
+        $this->place_id = $place_id;
     }
-
-    /**
-     * @return string
-     */
-    public function getPostcode(): string
-    {
-        return $this->postcode;
-    }
-
-    /**
-     * @param string $postcode
-     * @return AddressTrait
-     */
-    public function setPostcode(string $postcode): AddressTrait
-    {
-        $this->postcode = $postcode;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCountry(): string
-    {
-        return $this->country;
-    }
-
-    /**
-     * @param string $country
-     * @return AddressTrait
-     */
-    public function setCountry(string $country): AddressTrait
-    {
-        $this->country = $country;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLatitude(): string
-    {
-        return $this->latitude;
-    }
-
-    /**
-     * @param string $latitude
-     * @return AddressTrait
-     */
-    public function setLatitude(string $latitude): AddressTrait
-    {
-        $this->latitude = $latitude;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLongitude(): string
-    {
-        return $this->longitude;
-    }
-
-    /**
-     * @param string $longitude
-     * @return AddressTrait
-     */
-    public function setLongitude(string $longitude): AddressTrait
-    {
-        $this->longitude = $longitude;
-        return $this;
-    }
-
 
 }

@@ -1,0 +1,26 @@
+(
+    [
+        0,
+        [
+            ["Coucouron, France", null,
+                ["locality", "political", "geocode"],
+                "CjQpAAAA-1ILo-54fvDfMvS4s_HLIfoTZm8IqDqjnIHNJjvXJm8biLSUKmc47VZfSmPEOnKtEhBDwSHbWnPAted28J6yI3FyGhQjI_6Di5DP13ss1vNFAHT5297S-w",
+                "c5842d5072aeda73e435e92cacac2d0ce7649df3",
+                [["Coucouron", 0], ["France", 11]],
+                [[0, 6]], null, "ChIJORPjiI2wtBIRkJHry688CQQ",
+                ["Coucouron", "France", [[0, 6]]]],
+            ["Coucou French Classes, Marcy Avenue, Brooklyn, NY, United States", null,
+                ["establishment"],
+                "ClRPAAAAHSfRBfh6br-Q87z2h0xwq5qaXzUMCTYdU8DcsNaBXJNyUHdQ3Yh9jU2cWXy5xOX4VTvG7x_GH6jJqoYCeXNDLdcbkQiCSReeNNlxGssqFosSEKSSgD9WaVY6krNf3gPBZO0aFCpogYZbKBuhDBk8M7KGZJTuA2V5",
+                "39181b0a7b99dddadcdf72230288f45950ec91da",
+                [["Coucou French Classes", 0], ["Marcy Avenue", 23], ["Brooklyn", 37], ["NY", 47], ["United States", 51]],
+                [[0, 6]], null, "ChIJr5bnP19ZwokRynYwU721cII",
+                ["Coucou French Classes", "Marcy Avenue, Brooklyn, NY, United States", [[0, 6]]]],
+            ["Couscous Cafe, North May Avenue, Oklahoma City, OK, United States", null,
+                ["establishment"],
+                "ClRPAAAAhhMEjRN2-9srPmzVA5wouqBOZwQEez4YOAxPeFhmERHTvEu_APWUOXj944Jh-dR2xyPLkkog27xZ2I3TX1r3D8F3HTtnKAQq2_uq5Wsxby4SEKGFZwRDkMr5Hv2wSRkPEFEaFOuAPN0Y-43U5CtAkmD5tW2NsWNY",
+                "9f700102026c5e2b227926a631019302e77953fb",
+                [["Couscous Cafe", 0], ["North May Avenue", 15], ["Oklahoma City", 33], ["OK", 48], ["United States", 52]],
+                [[0, 7]], null, "ChIJ7dpwR1gasocRBhDB9BvUACs",
+                ["Couscous Cafe", "North May Avenue, Oklahoma City, OK, United States", [[0, 7]]]],
+            ["Coucou ma Gourmande, Section 1, Shengli 7th Street, Zhubei City, Hsinchu County, Taiwan", null, ["establishment"], "CnRlAAAAvKYKkHyWYoOuhfDGPCvx0wQbve7Y3_edfhSHtxVCY1Ixg6ei51MKad_NcUKq4Q11j58jCL0MVuiKwZFHsJBTSY0B5T6tgmtlHwN4Kw8edR8f_9A8--3kwqCdGchVvn17rQHwb7YhPx0r8U9VwhyDUhIQLuemqm1H1YbBzGkecG9zxBoUtgXDNBNaR4VSErVMDODKlzcbfTg", "10677e61c317693a46f5380915d5fe9034267aee", [["Coucou ma Gourmande", 0], ["Section 1, Shengli 7th Street", 21], ["Zhubei City", 52], ["Hsinchu County", 65], ["Taiwan", 81]], [[0, 6]], null, "ChIJ_WD-heM2aDQRWTPvApfZu0Q", ["Coucou ma Gourmande", "Section 1, Shengli 7th Street, Zhubei City, Hsinchu County, Taiwan", [[0, 6]]]], ["CousCous Mediterranean Grill, South 900 East, Salt Lake City, UT, United States", null, ["establishment"], "CmRdAAAAQbogwQ_jRN4CFGAipFjBmUI5GdcIBsYRDX-wmUCBOH3wIcO6qNrq5GDFKhvfYMivMwOKlSfQbbEiBNC2qhbxClCZCFoBH9rQXGMgv_Ij2p_-wY290lA3oPyFw2AGb2GvEhBNWmoiZyP07ChfID3LpXQkGhRov9YPd8fXaki9jRNxIt8xyrN5dQ", "3c176567954354067e90cdcf2780d2f11f77bd57", [["CousCous Mediterranean Grill", 0], ["South 900 East", 30], ["Salt Lake City", 46], ["UT", 62], ["United States", 66]], [[0, 7]], null, "ChIJ5YXI3_qJUocRm4ThQ2UgUBA", ["CousCous Mediterranean Grill", "South 900 East, Salt Lake City, UT, United States", [[0, 7]]]]]] )

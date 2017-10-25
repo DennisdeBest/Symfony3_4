@@ -87,6 +87,25 @@ fos_user:
     service:
         user_manager: pugx_user_manager
 
+httplug:
+    classes:
+        client: Http\Adapter\Guzzle6\Client
+        message_factory: Http\Message\MessageFactory\GuzzleMessageFactory
+    clients:
+        acme:
+            factory: httplug.factory.guzzle6
+
+ivory_google_map:
+    geocoder:
+        client: httplug.client.default
+        message_factory: httplug.message_factory.default
+        format: json
+        api_key: ~
+    place_autocomplete:
+        client: httplug.client.default
+        message_factory: httplug.message_factory.default
+        api_key: ~
+
 david_badura_faker:
     locale: fr_FR
 

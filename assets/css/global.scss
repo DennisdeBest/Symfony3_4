@@ -36,3 +36,7 @@
   grid-area: sidebar;
 }
 
+#header, #sidebar, #footer, #maincontent {
+  max-width: 100%;
+}
+
