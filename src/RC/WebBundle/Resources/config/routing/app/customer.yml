@@ -6,6 +6,8 @@ rc_customer:
         templates: RCWebBundle:Crud
         except: []
         grid: rc_customer
+        criteria:
+            uuid: $uuid
         vars:
             all:
                 subheader: red_carpet.grid.customer # define a translation key for your entity subheader

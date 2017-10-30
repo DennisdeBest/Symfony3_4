@@ -13,6 +13,7 @@ trait AddressTrait
      * @var string
      *
      * @ORM\Column(name="address", type="string", length=255, nullable=true)
+     *
      */
     protected $address;
 
@@ -22,7 +23,7 @@ trait AddressTrait
      * @ORM\Column(name="place_id", type="string", length=255, nullable=true)
      *
      * @Assert\Expression(
-     *     "not(this.getAddress() == null) and this.getPlaceId() == null",
+     *     "this.addressHasPlaceId()",
      *     message="Address not valid"
      * )
      */
@@ -61,6 +62,11 @@ trait AddressTrait
     public function setPlaceId(string $place_id)
     {
         $this->place_id = $place_id;
+    }
+
+    public function addressHasPlaceId()
+    {
+        return empty($this->address) === empty($this->place_id);
     }
 
 }
