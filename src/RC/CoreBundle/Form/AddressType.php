@@ -41,23 +41,14 @@ class AddressType extends AbstractType
 
 
     }
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        $resolver->setDefaults(array(
-            'error_mapping' => array(
-                'place_id' => 'address',
-            ),
-            'inherit_data' => true,
-            'form_name' => null,
-        ));
-    }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-        'error_mapping' => array(
-            'place_id' => 'address',
-        ),
+            'error_mapping' => array(
+                'addressHasPlaceId' => 'address',
+            ),
+        'error_bubbling' => false,
         'inherit_data' => true,
         'form_name' => null,
     ));
