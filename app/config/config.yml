@@ -80,7 +80,7 @@ swiftmailer:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: RedCarpet\Bundle\UserBundle\Entity\User
+    user_class: RC\Bundle\UserBundle\Entity\User
     from_email:
         address: '%mailer.from_address%'
         sender_name: '%mailer.from_name%'
@@ -117,8 +117,6 @@ sylius_fixtures:
             fixtures:
                 customer:
                     priority: 100
-                contact:
-                    priority: 90
 
 
 sonata_block:

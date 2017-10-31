@@ -10,15 +10,28 @@ services:
         autoconfigure: true
         public: false
 
+    ###Set tags for all fixtures
+    _instanceof:
+        Sylius\Bundle\FixturesBundle\Fixture\AbstractFixture:
+            tags:
+              - { name: sylius_fixtures.fixture }
+        Sylius\Bundle\FixturesBundle\Listener\AbstractListener:
+            tags:
+              - { name: sylius_fixtures.listener }
+
+    ###CoreBundle
     RC\CoreBundle\:
         resource: '../../src/RC/CoreBundle/*'
 
+    #Doctrine listeners need an event so they need to be declared explicitly
     RC\CoreBundle\EventListener\UuidListener:
         tags:
           - { name: doctrine.event_listener, event: prePersist }
 
+    ###Other bundles
     RC\UserBundle\:
         resource: '../../src/RC/UserBundle/*'
 
     RC\CustomerBundle\:
         resource: '../../src/RC/CustomerBundle/*'
+

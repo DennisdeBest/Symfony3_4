@@ -3,6 +3,7 @@ rc_customer:
         alias: rc.customer
         identifier: uuid
         section: app
+        redirect: index
         templates: RCWebBundle:Crud
         except: []
         grid: rc_customer
