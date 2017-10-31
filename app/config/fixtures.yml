@@ -1,0 +1,8 @@
+sylius_fixtures:
+    suites:
+        default:
+            listeners:
+                purge_user_tables: ~
+            fixtures:
+                customer:
+                    priority: 100

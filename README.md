@@ -73,7 +73,7 @@ The User Entity contains the annotations used to join the tables of the base use
 Foreach new entity based on this user you need to add a line to the DiscriminatorMap with it's name and associated class.
 
 This will created foreign key constraints between the base class and the custom classes which makes it hard to correctly purge the database
-when running thee fixtures. That's why the class also contains a FixtureListener to which you need to pass the repositories of each user class.
+when running the fixtures. That's why the class also contains a FixtureListener to which you need to pass the repositories of each user class.
 ```c++
 //$contactRepo = $this->container->get('red_carpet.repository.contact');
 //$customerRepo = $this->container->get('red_carpet.repository.customer');
@@ -244,10 +244,11 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: resources.yml }
+    - { resource: fixtures.yml }
     - { resource: grids/grids.yml }
 ```
 
-We'll go a bit more into detail for the grids and resources files.
+We'll go a bit more into detail for some of these.
 
 ## Grids
 
@@ -345,7 +346,35 @@ sylius_resource:
                 form: RC\CustomerBundle\Form\Type\RegistrationType
 ```
 
-A resource will need at least a model and a form .
+A resource will need at least a model and a form.
+
+## Fixtures
+ ```yml
+ sylius_fixtures:
+     suites:
+         default:
+             listeners:
+                 purge_user_tables: ~
+             fixtures:
+                 customer:
+                     priority: 100
+ ```
+This configuration file allows us to load all the fixtures we have created, configure their options aswell as the priorities.
+We can also configure listeners that will take action at a specific time in the fixture loading cycle.
+
+These fixtures need to be loaded as services, thanks to the autoload of services there is not much to do.
+The services do, however, need a certain tag in order to be recognized properly. To set this tag for all fixtures at once we use the _instanceOf option for the services :
+```yml
+###Set tags for all fixtures
+    _instanceof:
+        Sylius\Bundle\FixturesBundle\Fixture\AbstractFixture:
+            tags:
+              - { name: sylius_fixtures.fixture }
+        Sylius\Bundle\FixturesBundle\Listener\AbstractListener:
+            tags:
+              - { name: sylius_fixtures.listener }
+``` 
+As long as our bundle as a whole is present in the services.yml file the fixtures and listeners will be fully functional without any further configuration.
 # Services
 
 The services are autowired and autoconfigured since Symfony 3.3.

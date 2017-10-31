@@ -8,7 +8,6 @@ use Doctrine\ORM\EntityRepository;
 use Sylius\Bundle\FixturesBundle\Listener\AbstractListener;
 use Sylius\Bundle\FixturesBundle\Listener\BeforeSuiteListenerInterface;
 use Sylius\Bundle\FixturesBundle\Listener\SuiteEvent;
-use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class FixtureListener extends AbstractListener implements BeforeSuiteListenerInterface

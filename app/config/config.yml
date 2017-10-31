@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: resources.yml }
+    - { resource: fixtures.yml }
     - { resource: grids/grids.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
@@ -108,16 +109,6 @@ ivory_google_map:
 
 david_badura_faker:
     locale: fr_FR
-
-sylius_fixtures:
-    suites:
-        default:
-            listeners:
-                purge_user_tables: ~
-            fixtures:
-                customer:
-                    priority: 100
-
 
 sonata_block:
     default_contexts: [sonata_page_bundle]
