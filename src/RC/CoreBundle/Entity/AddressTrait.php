@@ -24,7 +24,7 @@ trait AddressTrait
      *
      * @Assert\Expression(
      *     "this.addressHasPlaceId()",
-     *     message="Address not valid"
+     *     message="invalid_address"
      * )
      */
     protected $place_id;

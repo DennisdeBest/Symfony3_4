@@ -75,9 +75,9 @@ Foreach new entity based on this user you need to add a line to the Discriminato
 This will created foreign key constraints between the base class and the custom classes which makes it hard to correctly purge the database
 when running the fixtures. That's why the class also contains a FixtureListener to which you need to pass the repositories of each user class.
 ```c++
-//$contactRepo = $this->container->get('red_carpet.repository.contact');
-//$customerRepo = $this->container->get('red_carpet.repository.customer');
-$userRepo = $this->entityManager->getRepository('RedCarpetUserBundle:User');
+//$contactRepo = $this->container->get('rc.repository.contact');
+//$customerRepo = $this->container->get('rc.repository.customer');
+$userRepo = $this->entityManager->getRepository('RCUserBundle:User');
 
 //$repos = [$contactRepo, $customerRepo, $userRepo];
 $repos = [$userRepo];
@@ -113,7 +113,7 @@ rc_customer:
             uuid: $uuid
         vars:
             all:
-                subheader: red_carpet.grid.customer # define a translation key for your entity subheader
+                subheader: rc.grid.customer # define a translation key for your entity subheader
             index:
                 icon: 'file image outline' # choose an icon that will be displayed next to the subheader
     type: sylius.resource
@@ -297,10 +297,10 @@ sylius_grid:
             fields:
                 firstname:
                     type: string
-                    label: red_carpet.grid.customer.firstname
+                    label: rc.grid.customer.firstname
                 lastname:
                     type: string
-                    label: red_carpet.grid.customer.lastname
+                    label: rc.grid.customer.lastname
                 enabled:
                     type: twig
                     label: sylius.ui.enabled

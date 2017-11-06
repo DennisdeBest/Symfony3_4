@@ -37,7 +37,7 @@ class FixtureListener extends AbstractListener implements BeforeSuiteListenerInt
      */
     public function beforeSuite(SuiteEvent $suiteEvent, array $options)
     {
-        //$contactRepo = $this->container->get('red_carpet.repository.contact');
+        //$contactRepo = $this->container->get('rc.repository.contact');
         $customerRepo = $this->container->get('rc.repository.customer');
         $userRepo = $this->entityManager->getRepository('RCUserBundle:User');
 

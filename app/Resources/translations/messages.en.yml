@@ -1,0 +1,17 @@
+rc:
+    form:
+        customer:
+            address: Address
+            email: Email
+            enabled: Enabled
+            firstname: Firstname
+            lastname: Lastname
+
+sylius:
+    ui:
+        administration: Administration
+        create: Create
+        edit: Edit
+        new: New
+        save_changes: Save
+        show: Show

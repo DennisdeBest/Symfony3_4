@@ -8,10 +8,10 @@ sylius_grid:
             fields:
                 firstname:
                     type: string
-                    label: red_carpet.grid.customer.firstname
+                    label: rc.grid.customer.firstname
                 lastname:
                     type: string
-                    label: red_carpet.grid.customer.lastname
+                    label: rc.grid.customer.lastname
                 enabled:
                     type: twig
                     label: sylius.ui.enabled

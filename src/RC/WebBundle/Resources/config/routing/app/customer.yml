@@ -11,7 +11,7 @@ rc_customer:
             uuid: $uuid
         vars:
             all:
-                subheader: red_carpet.grid.customer # define a translation key for your entity subheader
+                subheader: rc.grid.customer # define a translation key for your entity subheader
             index:
                 icon: 'file image outline' # choose an icon that will be displayed next to the subheader
     type: sylius.resource
