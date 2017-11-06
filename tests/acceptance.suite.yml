@@ -1,0 +1,12 @@
+actor: AcceptanceTester
+modules:
+    enabled:
+        - WebDriver:
+            url: 'http://symfony.local/'
+            window_size: false
+            port: 9515
+            browser: chrome
+        - Doctrine2:
+            depends: Symfony
+            cleanup: true
+        - \Helper\Acceptance
