@@ -113,4 +113,5 @@ class Customer extends BaseUser implements ResourceInterface, TimestampableInter
 
         return $this;
     }
+
 }
