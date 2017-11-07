@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: symfony.local
+    database_port: 3306
+    database_name: symfony_test
+    database_user: exploit
+    database_password: exploit
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    mailer.from_name: dev
+    mailer.from_address: dev@dev.dev
+    secret: cfeb89747cdb6a6d27763b9f03fa26a5bddbfc45
