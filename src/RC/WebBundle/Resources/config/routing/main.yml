@@ -5,3 +5,7 @@ rc_homepage:
 rc_frontend:
     prefix: /app
     resource: "@RCWebBundle/Resources/config/routing/app/main.yml"
+
+rc_backend:
+    prefix: /admin
+    resource: "@RCWebBundle/Resources/config/routing/admin/main.yml"

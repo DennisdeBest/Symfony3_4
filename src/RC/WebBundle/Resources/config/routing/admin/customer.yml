@@ -2,7 +2,7 @@ rc_customer:
     resource: |
         alias: rc.customer
         identifier: uuid
-        section: app
+        section: admin
         redirect: index
         templates: RCWebBundle:Crud
         except: []

@@ -1,0 +1,2 @@
+rc_admin_customer:
+    resource: "@RCWebBundle/Resources/config/routing/admin/customer.yml"

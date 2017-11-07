@@ -1,5 +1,2 @@
-rc_app_customer:
-    resource: "@RCWebBundle/Resources/config/routing/app/customer.yml"
-
 rc_app_club:
     resource: "@RCWebBundle/Resources/config/routing/app/club.yml"

@@ -14,6 +14,8 @@ class CustomerCest
         'address' => 'Bordeaux'
     ];
 
+    private $baseUrl = '/app_test.php/admin/customers';
+
     public function _before(AcceptanceTester $I)
     {
     }
@@ -24,10 +26,25 @@ class CustomerCest
 
     /**
      * @param AcceptanceTester $I
+     * @return AcceptanceTester
+     */
+    private function loginAsAdmin(AcceptanceTester $I){
+        $I->wantTo('Login as admin');
+        $I->amOnPage('/app_test.php/login');
+        $I->fillField('Username', 'admin');
+        $I->fillField('Password', 'password');
+        $I->click('#_submit');
+        return $I;
+    }
+
+    /**
+     * @param AcceptanceTester $I
      */
     protected function createCustomerFromForm(AcceptanceTester $I)
     {
+        $I = $this->loginAsAdmin($I);
         $I->wantTo('create a customer');
+        $I->amOnPage($this->baseUrl);
         $this->fillCustomerForm($I);
     }
 
@@ -38,7 +55,7 @@ class CustomerCest
      */
     protected function fillCustomerForm(AcceptanceTester $I, $withAddress = false, $withPlace = false)
     {
-        $I->amOnPage('/app_test.php/app/customers');
+        $I->amOnPage($this->baseUrl);
         $I->click('Create');
         $I->fillField('Firstname', $this->user['firstname']);
         $I->fillField('Lastname', $this->user['lastname']);
@@ -56,52 +73,64 @@ class CustomerCest
      * Delete the customer before retesting
      * @param AcceptanceTester $I
      */
-    protected function removeCustomerIfExists(AcceptanceTester $I)
+    protected function removeLastCustomer(AcceptanceTester $I)
     {
-        $I->amOnPage('/app_test.php/app/customers');
-        $I->performOn('.trash', ['click' => 'Delete'], 5);
+        $I->amOnPage($this->baseUrl);
+        $I->performOn('div.pagination .item:nth-last-child(2)', ['click' => 'div.pagination .item:nth-last-child(2)'], 5); //click last page
+        $I->performOn('.trash', ['click' => 'tbody .item:last-child .trash'], 5);
     }
 
 
-    /***** Tests *****/
-
     /**
-     * @before createCustomerFromForm
      * @param AcceptanceTester $I
      */
-    public function checkThatCreatedUserIsInDatabase(AcceptanceTester $I)
+    protected function checkThatCreatedUserIsInDatabase(AcceptanceTester $I)
     {
         $I->seeInRepository('RCCustomerBundle:Customer', ['email' => $this->user['email']]);
-        $I->canSeeInCurrentUrl('/app_test.php/app/customers');
+        $I->canSeeInCurrentUrl($this->baseUrl);
     }
 
     /**
      * @param AcceptanceTester $I
      */
-    public function createSameUserTwiceShouldFail(AcceptanceTester $I)
+    protected function createSameUserTwiceShouldFail(AcceptanceTester $I)
     {
         $I->wantTo('create a customer with an email that is already used');
         $this->fillCustomerForm($I);
-        $I->canSeeInCurrentUrl('/app_test.php/app/customers/new');
+        $I->canSeeInCurrentUrl($this->baseUrl.'/new');
     }
 
     /**
      * @param AcceptanceTester $I
      */
-    public function createAddressWithoutPlaceIdIsImpossible(AcceptanceTester $I){
+    protected function createAddressWithoutPlaceIdIsImpossible(AcceptanceTester $I){
         $I->wantTo('create a customer with an an address and no placeId');
         $this->fillCustomerForm($I, true);
-        $I->canSeeInCurrentUrl('/app_test.php/app/customers/new');
+        $I->canSeeInCurrentUrl($this->baseUrl.'/new');
     }
 
     /**
-     * @before removeCustomerIfExists
      * @param AcceptanceTester $I
-     * @after removeCustomerIfExists
      */
-    public function createUserWithAddress(AcceptanceTester $I){
+    protected function createUserWithAddress(AcceptanceTester $I){
         $I->wantTo('create a customer with an an address');
         $this->fillCustomerForm($I, true, true);
-        $I->canSeeInCurrentUrl('/app_test.php/app/customers');
+        $I->canSeeInCurrentUrl($this->baseUrl);
+    }
+
+
+    /**
+     * User needs to be logged in to perform tests
+     * in order to keep the user logged in we need to pass $I to the test functions
+     * @param AcceptanceTester $I
+     */
+    public function runTests(AcceptanceTester $I){
+        $I = $this->loginAsAdmin($I);
+        $this->createCustomerFromForm($I);
+        $this->checkThatCreatedUserIsInDatabase($I);
+        $this->createSameUserTwiceShouldFail($I);
+        $this->createAddressWithoutPlaceIdIsImpossible($I);
+        $this->removeLastCustomer($I);
+        $this->createUserWithAddress($I);
     }
 }

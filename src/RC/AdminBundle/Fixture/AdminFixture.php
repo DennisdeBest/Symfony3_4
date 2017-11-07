@@ -43,6 +43,7 @@ class AdminFixture extends AbstractFixture implements FixtureInterface
         $admin->setPlainPassword('password');
         $admin->setUsername('admin');
         $admin->setEnabled(true);
+        $admin->setRoles(['ROLE_SUPER_ADMIN']);
         $adminManager->persist($admin);
 
         $adminManager->flush();

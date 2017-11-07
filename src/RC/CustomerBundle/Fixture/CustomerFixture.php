@@ -49,6 +49,7 @@ class CustomerFixture extends AbstractFixture implements FixtureInterface
         $customer->setEnabled(true);
         $customer->setAddress('Troll Burger, Via di Val Favara, Rome, Metropolitan City of Rome, Italy');
         $customer->setPlaceId('ChIJ6zcUBzheLxMRnH6uFN2zqKw');
+        $customer->setRoles(['ROLE_ADMIN']);
 
         $customerManager->persist($customer);
 

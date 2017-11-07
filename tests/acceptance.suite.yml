@@ -9,4 +9,10 @@ modules:
         - Doctrine2:
             depends: Symfony
             cleanup: true
+        - Db:
+            dsn: 'mysql:host=symfony.local;dbname=symfony_test'
+            user: 'exploit'
+            password: 'exploit'
+            dump: tests/_data/dump.sql
+            populate: true
         - \Helper\Acceptance
