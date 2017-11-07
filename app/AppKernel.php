@@ -56,6 +56,8 @@ class AppKernel extends Kernel
             new RC\UserBundle\RCUserBundle(),
             new RC\CustomerBundle\RCCustomerBundle(),
             new RC\CoreBundle\RCCoreBundle(),
+            new RC\ClubBundle\RCClubBundle(),
+            new RC\AdminBundle\RCAdminBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

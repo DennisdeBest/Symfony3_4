@@ -12,7 +12,8 @@ use FOS\UserBundle\Model\User as BaseUser;
  * @ORM\HasLifecycleCallbacks()
  * @ORM\DiscriminatorColumn(name="type", type="string")
  * @ORM\DiscriminatorMap({
- *    "customer" = "RC\CustomerBundle\Entity\Customer"
+ *    "customer" = "RC\CustomerBundle\Entity\Customer",
+ *     "admin" = "RC\AdminBundle\Entity\Admin"
  *     })
  */
 abstract class User extends BaseUser

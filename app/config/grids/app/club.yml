@@ -1,0 +1,43 @@
+sylius_grid:
+    grids:
+        rc_club:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: RC\ClubBundle\Entity\Club
+            fields:
+                name:
+                    type: string
+                    label: rc.grid.club.name
+                website:
+                    type: string
+                    label: rc.grid.club.website
+                enabled:
+                    type: twig
+                    label: sylius.ui.enabled
+                    options:
+                        template: SyliusUiBundle:Grid/Field:enabled.html.twig
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                        options:
+                            link:
+                                parameters:
+                                    uuid: resource.uuid
+                    delete:
+                        type: delete
+                        options:
+                            link:
+                                parameters:
+                                    uuid: resource.uuid
+                    show:
+                        type: show
+                        options:
+                            link:
+                                parameters:
+                                    uuid: resource.uuid
+

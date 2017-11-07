@@ -4,3 +4,8 @@ sylius_resource:
             classes:
                 model: RC\CustomerBundle\Entity\Customer
                 form: RC\CustomerBundle\Form\Type\RegistrationType
+
+        rc.club:
+            classes:
+                model: RC\ClubBundle\Entity\Club
+                form: RC\ClubBundle\Form\Type\ClubType

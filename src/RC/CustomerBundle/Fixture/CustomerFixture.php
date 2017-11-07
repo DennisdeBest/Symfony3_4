@@ -84,6 +84,6 @@ class CustomerFixture extends AbstractFixture implements FixtureInterface
         $optionsNode
             ->children()
             ->scalarNode('user')
-            ->defaultValue('admin@symfony.com');
+            ->defaultValue('customer@symfony.com');
     }
 }

@@ -6,3 +6,5 @@ sylius_fixtures:
             fixtures:
                 customer:
                     priority: 100
+                admin:
+                    priority: 110

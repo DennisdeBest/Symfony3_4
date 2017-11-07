@@ -2,6 +2,7 @@
 
 namespace RC\CustomerBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use PUGX\MultiUserBundle\Validator\Constraints\UniqueEntity;
 use RC\CoreBundle\Entity\AddressTrait;
@@ -48,6 +49,16 @@ class Customer extends BaseUser implements ResourceInterface, TimestampableInter
      */
     private $lastname;
 
+    /**
+     * @ORM\OneToMany(targetEntity="RC\ClubBundle\Entity\Club", mappedBy="customer")
+     */
+    private $clubs;
+
+    public function __construct()
+    {
+        $this->clubs = new ArrayCollection();
+        parent::__construct();
+    }
 
     /**
      * Set firstname
@@ -114,4 +125,62 @@ class Customer extends BaseUser implements ResourceInterface, TimestampableInter
         return $this;
     }
 
+
+    /**
+     * Set isEnabled
+     *
+     * @param boolean $isEnabled
+     *
+     * @return Customer
+     */
+    public function setIsEnabled($isEnabled)
+    {
+        $this->isEnabled = $isEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Get isEnabled
+     *
+     * @return boolean
+     */
+    public function getIsEnabled()
+    {
+        return $this->isEnabled;
+    }
+
+    /**
+     * Add club
+     *
+     * @param \RC\ClubBundle\Entity\Club $club
+     *
+     * @return Customer
+     */
+    public function addClub(\RC\ClubBundle\Entity\Club $club)
+    {
+        $this->clubs[] = $club;
+
+        return $this;
+    }
+
+    /**
+     * Remove club
+     *
+     * @param \RC\ClubBundle\Entity\Club $club
+     */
+    public function removeClub(\RC\ClubBundle\Entity\Club $club)
+    {
+        $this->clubs->removeElement($club);
+    }
+
+    /**
+     * Get clubs
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getClubs()
+    {
+        return $this->clubs;
+    }
 }

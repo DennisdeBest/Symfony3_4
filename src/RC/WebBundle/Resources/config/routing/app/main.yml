@@ -1,3 +1,5 @@
 rc_app_customer:
-    prefix: /app
     resource: "@RCWebBundle/Resources/config/routing/app/customer.yml"
+
+rc_app_club:
+    resource: "@RCWebBundle/Resources/config/routing/app/club.yml"

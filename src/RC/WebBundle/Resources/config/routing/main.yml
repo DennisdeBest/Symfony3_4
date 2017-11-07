@@ -3,4 +3,5 @@ rc_homepage:
     defaults: { _controller: RCWebBundle:Default:index }
 
 rc_frontend:
+    prefix: /app
     resource: "@RCWebBundle/Resources/config/routing/app/main.yml"

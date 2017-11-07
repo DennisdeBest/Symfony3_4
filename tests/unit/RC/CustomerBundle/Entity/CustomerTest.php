@@ -17,7 +17,6 @@ class CustomerTest extends \Codeception\Test\Unit
     {
     }
 
-
     public function testCustomerHasUuid(){
         $em = $this->getModule('Doctrine2')->em;
         $customer = new Customer();

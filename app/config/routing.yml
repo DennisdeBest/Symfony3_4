@@ -1,6 +1,6 @@
-rc_customer:
-    resource: "@RCCustomerBundle/Resources/config/routing.yml"
-    prefix:   /customer/
+rc_admin:
+    resource: "@RCAdminBundle/Resources/config/routing.yml"
+    prefix:   /
 
 rc_web:
     resource: "@RCWebBundle/Resources/config/routing/main.yml"

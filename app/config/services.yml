@@ -35,3 +35,6 @@ services:
     RC\CustomerBundle\:
         resource: '../../src/RC/CustomerBundle/*'
 
+    RC\AdminBundle\:
+            resource: '../../src/RC/AdminBundle/*'
+

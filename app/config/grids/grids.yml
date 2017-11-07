@@ -1,5 +1,6 @@
 imports:
     - { resource: app/customer.yml }
+    - { resource: app/club.yml }
 
 sylius_grid:
     templates:
