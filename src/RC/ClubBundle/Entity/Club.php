@@ -4,6 +4,10 @@ namespace RC\ClubBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use RC\CoreBundle\Entity\AddressTrait;
+use RC\CoreBundle\Entity\BlameableInterface;
+use RC\CoreBundle\Entity\BlameableTrait;
+use RC\CoreBundle\Entity\TimestampableInterface;
+use RC\CoreBundle\Entity\TimestampableTrait;
 use RC\CoreBundle\Entity\ToggleableInterface;
 use RC\CoreBundle\Entity\ToggleableTrait;
 use RC\CoreBundle\Entity\UuidInterface;
@@ -16,9 +20,9 @@ use Sylius\Component\Resource\Model\ResourceInterface;
  * @ORM\Table(name="club")
  * @ORM\Entity(repositoryClass="RC\ClubBundle\Repository\ClubRepository")
  */
-class Club implements ResourceInterface, UuidInterface, ToggleableInterface
+class Club implements ResourceInterface, UuidInterface, ToggleableInterface, BlameableInterface, TimestampableInterface
 {
-    use UuidTrait, AddressTrait, ToggleableTrait;
+    use UuidTrait, AddressTrait, ToggleableTrait, BlameableTrait, TimestampableTrait;
     /**
      * @var int
      *
@@ -38,7 +42,7 @@ class Club implements ResourceInterface, UuidInterface, ToggleableInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="website", type="string", length=255)
+     * @ORM\Column(name="website", type="string", length=255, nullable=true)
      */
     private $website;
 

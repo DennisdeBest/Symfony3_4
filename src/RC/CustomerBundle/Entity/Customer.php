@@ -50,7 +50,7 @@ class Customer extends BaseUser implements ResourceInterface, TimestampableInter
     private $lastname;
 
     /**
-     * @ORM\OneToMany(targetEntity="RC\ClubBundle\Entity\Club", mappedBy="customer")
+     * @ORM\OneToMany(targetEntity="RC\ClubBundle\Entity\Club", mappedBy="created_by")
      */
     private $clubs;
 
